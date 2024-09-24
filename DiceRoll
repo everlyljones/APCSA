@@ -15,8 +15,8 @@ public class DiceRoll {
     public static void main(String[] args) {
         Random generator = new Random();
         int num1;
-        num1 = generator.nextInt(7);
+        num1 = generator.nextInt(6) + 1;
       
-        System.out.println("A random float: " + num1);
+        System.out.println("A random number: " + num1);
     }
     }
