@@ -1,0 +1,22 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ */
+
+package com.mycompany.diceroll;
+
+import java.util.Random;
+
+/**
+ *
+ * @author ejones2025
+ */
+public class DiceRoll {
+
+    public static void main(String[] args) {
+        Random generator = new Random();
+        int num1;
+        num1 = generator.nextInt(7);
+      
+        System.out.println("A random float: " + num1);
+    }
+    }
