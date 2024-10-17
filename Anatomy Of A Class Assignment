@@ -1,6 +1,11 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
+/*
+1. A class contains data and method declarations. In an object, the value of the data defines the object from the class. 
+2. When you pass an object to a print or println method, it prints out the string. Also, it is possible for the code to debug during this process. 
+3. The scope variable in a method is local data. The scope variable in a class can be referenced anywhere in the class. 
+*/
 
 package com.mycompany.class_project;
 
