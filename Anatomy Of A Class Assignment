@@ -1,0 +1,79 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ */
+
+package com.mycompany.class_project;
+
+/**
+ *
+ * @author ejones2025
+ */
+public class Class_Project {
+    public static void main(String[] args) {
+    Car vwBug = new Car("VW Bug", 50, 70, 20895);
+    Car toyotaPrius = new Car("Toyota Prius", 121, 115, 27950);
+    Car bmwI8 = new Car("BMW i8", 369, 155, 148495);
+    Car teslaModel3 = new Car("Tesla Model 3", 283, 162, 40380);
+
+    
+    System.out.println(vwBug);
+    System.out.println(toyotaPrius);
+    System.out.println(bmwI8);
+    System.out.println(teslaModel3);
+    }
+}
+
+
+class Car {
+    private String carBrand;
+    private int enginePower;
+    private double maxSpeed;
+    private double price; 
+
+
+    public Car(String carBrand, int enginePower, double maxSpeed, double price) {
+        this.carBrand = carBrand;
+        this.enginePower = enginePower;
+        this.maxSpeed = maxSpeed;
+        this.price = price;
+    }
+
+
+    public void setCarBrand(String carBrand) {
+        this.carBrand = carBrand;
+    }
+    public void setEnginePower(int enginePower) {
+        this.enginePower = enginePower;
+    }
+    public void setMaxSpeed(double maxSpeed) {
+        this.maxSpeed = maxSpeed;
+    }
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    
+    public String getCarBrand() {
+        return carBrand;
+    }
+    public int getEnginePower() {
+        return enginePower;
+    }
+    public double getMaxSpeed() {
+        return maxSpeed;
+    }
+    public double getPrice() {
+        return price;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Car Brand: " + carBrand +
+               ", Engine Power: " + enginePower + " HP" +
+               ", Max Speed: " + maxSpeed + " MPH" +
+               ", Price: $" + price;
+
+    }
+
+}
