@@ -1,13 +1,13 @@
 
-
 public class ClassRelationship {
     public static void main(String[] args) {
 
         Task[] tasks = {
-            new Task("take out trash", 3, 5),
+            new Task("take out trash", 1, 5),
             new Task("walk dog", 5, 3),
             new Task("make bed", 4, 4),
-            new Task("do homework", 3, 2)
+            new Task("do homework", 3, 2),
+            new Task("do assignment", 3, 1)
         };
 
      
@@ -67,10 +67,19 @@ class Task implements Priority, Complexity, Comparable<Task> {
     public int compareTo(Task other) {
 
         if (this.priority != other.priority) {
-            return Integer.compare(other.priority, this.priority);
+            if (this.getPriority() < other.getPriority()){
+                return -1;
+            } else if (this.getPriority() > other.getPriority()){
+                return 1;
+            }
+        } else {
+         if (this.getComplexity() < other.getComplexity()){
+             return -1;
+         }   else {
+             return 1;
+         }
         }
-
-        return Integer.compare(this.complexity, other.complexity);
+        return 0;
     }
 
     @Override
@@ -78,4 +87,3 @@ class Task implements Priority, Complexity, Comparable<Task> {
         return "Task{name='" + name + '\'' + ", priority=" + priority + ", complexity=" + complexity + '}';
     }
 }
-
