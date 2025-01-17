@@ -1,28 +1,26 @@
+
 interface Priority {
     void setPriority(int priority);
     int getPriority();
 }
 
-// Define the Complexity interface
 interface Complexity {
     void setComplexity(int complexity);
     int getComplexity();
 }
 
-// Define the Task class implementing Priority, Complexity, and Comparable<Task>
 class Task implements Priority, Complexity, Comparable<Task> {
-    private String name;
+    private final String name;
     private int priority;
     private int complexity;
 
-    // Constructor
+
     public Task(String name, int priority, int complexity) {
         this.name = name;
         this.priority = priority;
         this.complexity = complexity;
     }
 
-    // Implement setPriority and getPriority from Priority interface
     @Override
     public void setPriority(int priority) {
         this.priority = priority;
@@ -33,7 +31,6 @@ class Task implements Priority, Complexity, Comparable<Task> {
         return this.priority;
     }
 
-    // Implement setComplexity and getComplexity from Complexity interface
     @Override
     public void setComplexity(int complexity) {
         this.complexity = complexity;
@@ -44,14 +41,13 @@ class Task implements Priority, Complexity, Comparable<Task> {
         return this.complexity;
     }
 
-    // Implement compareTo method from Comparable interface
     @Override
     public int compareTo(Task other) {
-        // First, compare by priority (higher priority comes first)
+
         if (this.priority != other.priority) {
             return Integer.compare(other.priority, this.priority);
         }
-        // If priorities are the same, compare by complexity (lower complexity comes first)
+
         return Integer.compare(this.complexity, other.complexity);
     }
 
@@ -61,25 +57,23 @@ class Task implements Priority, Complexity, Comparable<Task> {
     }
 }
 
-// Define the driver class
 public class ClassRelationship {
     public static void main(String[] args) {
-        // Create an array of tasks
+
         Task[] tasks = {
-            new Task("Write report", 3, 5),
-            new Task("Fix bugs", 5, 3),
-            new Task("Prepare presentation", 4, 4),
-            new Task("Code review", 3, 2)
+            new Task("take out trash", 3, 5),
+            new Task("walk dog", 5, 3),
+            new Task("make bed", 4, 4),
+            new Task("do homework", 3, 2)
         };
 
-        // Sort the tasks using Arrays.sort
+     
         java.util.Arrays.sort(tasks);
 
-        // Print sorted tasks
+ 
         System.out.println("Tasks sorted by priority, then complexity:");
         for (Task task : tasks) {
             System.out.println(task);
         }
     }
 }
-
