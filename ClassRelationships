@@ -1,4 +1,26 @@
 
+
+public class ClassRelationship {
+    public static void main(String[] args) {
+
+        Task[] tasks = {
+            new Task("take out trash", 3, 5),
+            new Task("walk dog", 5, 3),
+            new Task("make bed", 4, 4),
+            new Task("do homework", 3, 2)
+        };
+
+     
+        java.util.Arrays.sort(tasks);
+
+ 
+        System.out.println("Tasks sorted by priority, then complexity:");
+        for (Task task : tasks) {
+            System.out.println(task);
+        }
+    }
+}
+
 interface Priority {
     void setPriority(int priority);
     int getPriority();
@@ -57,23 +79,3 @@ class Task implements Priority, Complexity, Comparable<Task> {
     }
 }
 
-public class ClassRelationship {
-    public static void main(String[] args) {
-
-        Task[] tasks = {
-            new Task("take out trash", 3, 5),
-            new Task("walk dog", 5, 3),
-            new Task("make bed", 4, 4),
-            new Task("do homework", 3, 2)
-        };
-
-     
-        java.util.Arrays.sort(tasks);
-
- 
-        System.out.println("Tasks sorted by priority, then complexity:");
-        for (Task task : tasks) {
-            System.out.println(task);
-        }
-    }
-}
